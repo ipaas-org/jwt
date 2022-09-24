@@ -30,7 +30,7 @@ func (p Parser) GenerateToken(userID int, exp time.Duration) (string, error) {
 	}
 
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
-	return token.SignedString(p.Secret), nil
+	return token.SignedString(p.Secret)
 }
 
 func (p Parser) ParseToken(t string) (CustomClaims, error) {
